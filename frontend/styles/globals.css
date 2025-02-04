@@ -1,0 +1,488 @@
+/* styles/globals.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.cart-link a {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cart-link a:hover {
+  background-color: #45a049;
+}
+
+.search-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.product-card p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.product-card button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.product-card button:hover {
+  background-color: #45a049;
+}
+
+
+
+/* Mahsulot qo'shish sahifasi */
+.add-product-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-product-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.message {
+  text-align: center;
+  margin: 10px 0;
+  color: green;
+}
+
+.add-product-form .form-group {
+  margin-bottom: 15px;
+}
+
+.add-product-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.add-product-form input,
+.add-product-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.add-product-form textarea {
+  resize: vertical;
+}
+
+.add-product-form .submit-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.add-product-form .submit-btn:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+
+.cart-container {
+  padding: 20px;
+  background-color: #fff;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-items {
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.cart-total {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.cart-actions a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.cart-actions a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+.cart-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cart-actions a {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cart-actions a:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.cart-actions a:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+
+
+
+
+/* Nav elementining umumiy stili */
+nav {
+  background-color: #2d3748; /* Gray-800 */
+  padding: 16px; /* To'liq oraliq */
+  color: white;
+}
+
+/* Container uchun markazlashtirish */
+nav .container {
+  max-width: 1200px; /* Kattaroq ekranlarda maksimal kenglik */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Linklar uchun umumiy stil */
+nav a {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effekti */
+nav a:hover {
+  background-color: #4a5568; /* Gray-600 */
+}
+
+/* Mobile responsivlik uchun */
+@media (max-width: 768px) {
+  nav .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+}
+
+
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+
+.clear-cart-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.clear-cart-btn:hover {
+  background-color: #ff3333;
+}
+
+
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-container label {
+  margin-right: 10px;
+}
+
+.quantity-input {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.quantity-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.clear-cart-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.clear-cart-btn:hover {
+  background-color: #ff3333;
+}
+
+
+
+
+.purchase-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.purchase-btn:hover {
+  background-color: #45a049;
+}
+
+.message {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #e0ffe0;
+  color: #007b00;
+  border: 1px solid #007b00;
+  border-radius: 5px;
+}
+
+
+
+.admin-panel {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.add-product-form {
+  margin-bottom: 20px;
+}
+
+.add-product-form input {
+  display: block;
+  margin: 5px 0;
+  padding: 10px;
+  width: 300px;
+}
+
+.add-product-form button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-product-form button:hover {
+  background-color: #0056b3;
+}
+
+.product-list .product-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.product-list .product-item button {
+  background-color: #FF6347;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.product-list .product-item button:hover {
+  background-color: #cc5037;
+}
+
+
+
+
+
+.login-form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f8f9fa; /* Orqa fon rangi */
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #343a40;
+}
+
+.login-form .error {
+  color: #dc3545; /* Qizil rang */
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.login-form input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #0056b3;
+}
