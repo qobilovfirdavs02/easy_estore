@@ -1,109 +1,52 @@
-# FastAPI + Next.js
+# E-Commerce Project
 
-This project is built using **FastAPI (Backend)** and **Next.js (Frontend)**.
+This is a simple e-commerce project built with FastAPI for the backend, Next.js for the frontend, and PostgreSQL as the database.
 
----
+## Project Structure
+- **Backend**: FastAPI (Python)
+- **Frontend**: Next.js (React)
+- **Database**: PostgreSQL
 
-## 📌 Installation and Setup
+## Setup and Installation
 
-Follow these steps to get the project up and running:
+### 1. Create a Virtual Environment for FastAPI
 
-### 1. **Clone the Repository**
 ```bash
-git clone https://github.com/qobilovfirdavs02/fastapi-nextjs.git
-cd fastapi-nextjs
+python -m venv .venv
+source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
 ```
 
-### 2. **Start the Backend (FastAPI)**
+### 2. Install Dependencies
 
-#### **Create a Python Virtual Environment**
-```bash
-cd backend
-python -m venv venv  # Create a virtual environment
-source venv/bin/activate  # For Linux/Mac
-venv\Scripts\activate  # For Windows
-```
-
-#### **Install Required Dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-#### **Run the Backend Server**
+### 3. Start the Application Using Docker Compose
+
+Ensure Docker is installed and running, then execute:
+
 ```bash
-uvicorn main:app --reload
+docker-compose up -d
 ```
 
-✅ **Backend server** runs at `http://127.0.0.1:8000`.
+### 4. Access the Application
 
----
+- Open the frontend in your browser: [http://localhost:3000](http://localhost:3000)
+- Test API endpoints using Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
-### 3. **Start the Frontend (Next.js)**
+### 5. Database Migration
 
-#### **Check if Node.js and NPM are Installed**
+If there are database errors, ensure tables are created according to the models in `backend/models.py`. If necessary, stop Docker Compose and restart it.
+
 ```bash
-node -v  # Check Node.js version
-npm -v  # Check NPM version
+docker-compose down
+docker-compose up -d
 ```
 
-If Node.js is not installed, download and install it from [official site](https://nodejs.org/).
-
-#### **Install Dependencies and Start Next.js**
-```bash
-cd ../frontend
-npm install  # Install required packages
-npm run dev  # Start the local development server
-```
-
-✅ **Frontend server** runs at `http://localhost:3000`.
+This should resolve any database issues and create the necessary tables automatically.
 
 ---
 
-## 📂 Project Structure
-```
-fastapi-nextjs/
-│-- backend/        # FastAPI backend code
-│   │-- main.py     # Main FastAPI application
-│   │-- requirements.txt  # Python dependencies
-│-- frontend/       # Next.js frontend code
-│   │-- pages/      # Next.js pages
-│   │-- components/ # UI components
-│   │-- package.json  # Frontend dependencies
-│-- README.md       # This file
-```
-
----
-
-## 🚀 API Documentation
-
-FastAPI provides automatic API documentation through Swagger UI:
-
-- **Swagger UI:** [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-- **Redoc:** [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
-
----
-
-## 💡 Usage
-1. Start both the backend and frontend servers.
-2. Open `http://localhost:3000` in your browser.
-3. Test API endpoints via `http://127.0.0.1:8000/docs`.
-
----
-
-## ⚡ Troubleshooting
-If you encounter any issues, check the following:
-- Ensure Python and Node.js versions are compatible.
-- Make sure the virtual environment (`venv`) is activated.
-- Verify that all dependencies are installed (`pip install -r requirements.txt` and `npm install`).
-
-If the issue persists, feel free to open an **Issue** or reach out for support.
-
----
-
-## 📜 License
-This project is licensed under the **MIT** license.
-
----
-
-✅ **Now you can successfully run the FastAPI + Next.js application! 🚀**
+Enjoy building your e-commerce application! 🚀
 
