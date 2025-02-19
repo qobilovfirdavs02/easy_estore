@@ -1,13 +1,23 @@
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
+import os
 
+# DATABASE_URL muhit o‘zgaruvchisini olish
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://ecom_user:eshop_ps@db:5432/ecom_db")
 
-#SQLALCHEMY_DATABASE_URL = "mysql+pymysql://user:password@db:3306/ecommerce"
-SQLALCHEMY_DATABASE_URL = "postgresql://user:password@db:5432/ecommerce"
+# SQLAlchemy engine yaratish
+engine = create_engine(DATABASE_URL)
 
-
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
+# Sessiyalarni boshqarish uchun sessionmaker
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+# ORM modellari uchun asosiy sinf
 Base = declarative_base()
 
+# DB sessiyasini olish uchun funksiya
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

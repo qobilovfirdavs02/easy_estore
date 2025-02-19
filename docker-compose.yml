@@ -1,35 +1,36 @@
-version: "3.8"
+version: '3.9'
 
 services:
   db:
-    image: postgres:13
-    container_name: postgres_container
+    image: postgres:15
+    container_name: postgres_c
     restart: always
     environment:
-      POSTGRES_DB: ecommerce
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ecom_db
+      POSTGRES_USER: ecom_user
+      POSTGRES_PASSWORD: ecom_ps
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
   backend:
     build:
       context: ./backend
-    container_name: backend_container
+    container_name: fastapi_c
     restart: always
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=postgresql://user:password@db:5432/ecommerce
+      - DATABASE_URL=postgresql://ecom_user:ecom_ps@db:5432/ecom_db
     depends_on:
       - db
 
   frontend:
     build:
       context: ./frontend
-    container_name: frontend_container
+    container_name: frontend_c
     restart: always
     ports:
       - "3000:3000"
